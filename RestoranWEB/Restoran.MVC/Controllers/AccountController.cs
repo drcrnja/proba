@@ -36,6 +36,12 @@ namespace Restoran.MVC.Controllers
             }
 
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+            // ako je kuvar – šalji ga na narudžbine
+            if (User.IsInRole("Kuvar"))
+                return RedirectToAction("Index", "Narudzbina");
+
+            // ostali idu na rezervacije
             return RedirectToAction("Index", "Rezervacija");
         }
 

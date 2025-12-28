@@ -8,15 +8,15 @@ namespace Restoran.BLL.Mappings
     {
         public MappingProfile()
         {
-            // Entitet → DTO
+            // entitet → DTO
             CreateMap<Rezervacija, RezervacijaDto>()
                 .ForMember(d => d.ImeGosta, opt => opt.MapFrom(s => s.Gost.ImeGosta))
                 .ForMember(d => d.PrezimeGosta, opt => opt.MapFrom(s => s.Gost.PrezimeGosta))
                 .ForMember(d => d.BrojStola, opt => opt.MapFrom(s => s.Sto.BrojStola))
                 .ForMember(d => d.NarudzbinaProizvod,
-                           opt => opt.MapFrom(s => s.Narudzbina == null
-                                                   ? "Nema narudžbine"
-                                                   : s.Narudzbina.Proizvod));
+                            opt => opt.MapFrom(s => s.Narudzbina == null
+                                                    ? null
+                                                    : s.Narudzbina.Proizvod));
 
             // DTO → Entitet (sve što šalješ iz forme)
             CreateMap<RezervacijaDto, Rezervacija>()

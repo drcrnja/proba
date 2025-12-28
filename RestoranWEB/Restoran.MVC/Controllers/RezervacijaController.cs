@@ -8,7 +8,8 @@ using Restoran.DAL.UnitOfWork;
 
 namespace Restoran.MVC.Controllers
 {
-    [Authorize]   // ceo kontroler zaštićen
+    // Kuvar ne sme uopšte da ulazi u kontroler
+    [Authorize(Roles = "Menadzer,Konobar,Gost")]
     public class RezervacijaController : Controller
     {
         private readonly IRezervacijaService _service;
@@ -25,11 +26,11 @@ namespace Restoran.MVC.Controllers
         {
             IEnumerable<RezervacijaDto> model;
 
-            // menadžer, kuvar, konobar vide sve
-            if (User.IsInRole("Menadzer") || User.IsInRole("Kuvar") || User.IsInRole("Konobar"))
+            // Menadžer, Konobar vide sve
+            if (User.IsInRole("Menadzer") || User.IsInRole("Konobar"))
                 model = await _service.GetAllAsync();
             else
-                // gost vidi SAMO svoje
+                // Gost vidi SAMO svoje
                 model = (await _service.GetAllAsync())
                         .Where(r => r.CreatedBy == User.Identity!.Name)
                         .ToList();
@@ -59,17 +60,22 @@ namespace Restoran.MVC.Controllers
             {
                 int rezId = await _service.CreateAsync(dto);
 
-                // ako gost izabrao narudžbinu – kreiraj je
+                // ako gost izabrao narudžbinu – kreiraj je i poveži
                 if (!string.IsNullOrEmpty(dto.NarudzbinaProizvod))
                 {
                     var nar = new Narudzbina
                     {
                         BrojStola = dto.BrojStola,
                         Proizvod = dto.NarudzbinaProizvod,
-                        CreatedBy = User.Identity.Name,
+                        CreatedBy = User.Identity.Name!,
                         Datum = DateTime.Now
                     };
                     await _uow.Narudzbine.AddAsync(nar);
+                    await _uow.SaveChangesAsync();          // sada nar ima Id
+
+                    // poveži sa rezervacijom
+                    var rez = await _uow.Rezervacije.GetByIdAsync(rezId);
+                    rez.NarudzbinaId = nar.Id;
                     await _uow.SaveChangesAsync();
                 }
 
@@ -83,14 +89,13 @@ namespace Restoran.MVC.Controllers
             }
         }
 
-
         // ----------- EDIT ----------
         public async Task<IActionResult> Edit(int id)
         {
             var dto = await _service.GetByIdAsync(id);
             if (dto == null) return NotFound();
 
-            // gost sme SAMO svoje
+            // Gost sme SAMO svoje
             if (User.IsInRole("Gost") && dto.CreatedBy != User.Identity!.Name)
                 return RedirectToAction("AccessDenied", "Account");
 
@@ -109,7 +114,48 @@ namespace Restoran.MVC.Controllers
             }
             try
             {
+                // 1. osnovne izmene rezervacije
                 await _service.UpdateAsync(dto);
+
+                var rez = await _uow.Rezervacije.GetByIdAsync(dto.IDRezervacije);
+
+                bool imaNovu = !string.IsNullOrEmpty(dto.NarudzbinaProizvod);
+
+                // 2. rukovanje narudžbinom
+                if (rez.NarudzbinaId.HasValue)        // ranije je imala narudžbinu
+                {
+                    var stara = await _uow.Narudzbine.GetByIdAsync(rez.NarudzbinaId.Value);
+                    if (stara != null)
+                    {
+                        if (!imaNovu)                 // korisnik ostavio prazno -> obriši
+                        {
+                            await _uow.Narudzbine.DeleteAsync(stara);
+                            rez.NarudzbinaId = null;
+                        }
+                        else                          // samo promeni proizvod
+                        {
+                            stara.Proizvod = dto.NarudzbinaProizvod;
+                        }
+                    }
+                }
+                else                                   // ranije nije imala
+                {
+                    if (imaNovu)                        // kreiraj novu
+                    {
+                        var nova = new Narudzbina
+                        {
+                            BrojStola = dto.BrojStola,
+                            Proizvod = dto.NarudzbinaProizvod,
+                            CreatedBy = User.Identity.Name!,
+                            Datum = DateTime.Now
+                        };
+                        await _uow.Narudzbine.AddAsync(nova);
+                        await _uow.SaveChangesAsync();  // da dobijemo Id
+                        rez.NarudzbinaId = nova.Id;
+                    }
+                }
+
+                await _uow.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (InvalidOperationException ex)
@@ -136,7 +182,7 @@ namespace Restoran.MVC.Controllers
             var dto = await _service.GetByIdAsync(id);
             if (dto == null) return NotFound();
 
-            // gost sme samo svoje
+            // Gost sme samo svoje
             if (User.IsInRole("Gost") && dto.CreatedBy != User.Identity!.Name)
                 return RedirectToAction("AccessDenied", "Account");
 

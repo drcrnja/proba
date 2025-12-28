@@ -45,6 +45,16 @@
         </select>
         <span asp-validation-for="BrojOsoba" class="text-danger"></span>
     </div>
+    <div class="form-group mb-2">
+        <label>Narudžbina</label>
+        <select asp-for="NarudzbinaProizvod" class="form-control">
+            <option value="">Bez narudžbine</option>
+            <option value="Magnezijum">Magnezijum</option>
+            <option value="Kisela voda">Kisela voda</option>
+            <option value="SNS sendvič">SNS sendvič</option>
+        </select>
+        <span asp-validation-for="NarudzbinaProizvod" class="text-danger"></span>
+    </div>
 
     <div class="form-group">
         <label>Ime gosta</label>

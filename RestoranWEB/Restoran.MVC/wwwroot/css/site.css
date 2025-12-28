@@ -1,4 +1,4 @@
-html {
+﻿html {
   font-size: 14px;
 }
 
@@ -34,4 +34,22 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+}
+/* podigne ceo sadržaj da se ne preklapa sa footerom */
+body {
+    padding-bottom: 80px; /* visina footera + malo više */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* možeš i 50px, po potrebi */
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    z-index: 1030; /* da bude iznad ostalih elemenata */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

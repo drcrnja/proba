@@ -75,12 +75,11 @@ namespace Restoran.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            var n = await _uow.Narudzbine.FirstOrDefaultAsync((Narudzbina x) =>
-                        x.Id == id &&
-                        x.CreatedBy == User.Identity!.Name);
+            var n = await _uow.Narudzbine.GetByIdAsync(id);
             if (n == null) return NotFound();
 
-            await _uow.SaveChangesAsync();
+            _uow.Narudzbine.DeleteAsync(n);   // obriši iz DbSet-a
+            await _uow.SaveChangesAsync();    // sačuvaj promene
             return RedirectToAction(nameof(Index));
         }
     }

@@ -10,6 +10,7 @@ namespace Restoran.DAL.Repositories
         Task<Narudzbina?> GetByIdAsync(int id);
         Task AddAsync(Narudzbina n);
         Task<List<Narudzbina>> GetByUserAsync(string userName);
+        Task DeleteAsync(Narudzbina entity);
 
         // DODAJ OVO:
         Task<Narudzbina?> FirstOrDefaultAsync(System.Linq.Expressions.Expression<Func<Narudzbina, bool>> predicate);

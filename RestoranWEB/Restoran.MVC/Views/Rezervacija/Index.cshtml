@@ -21,18 +21,15 @@
         @foreach (var r in Model)
         {
             <tr>
-                <td>@(r.NarudzbinaProizvod ?? "Nema narudžbine")</td>
                 <td>@r.Datum.ToShortDateString()</td>
                 <td>@r.Vreme.ToString(@"hh\:mm")</td>
                 <td>@r.BrojOsoba</td>
                 <td>@r.ImeGosta @r.PrezimeGosta</td>
                 <td>@r.BrojStola</td>
-                <td>@(r.NarudzbinaProizvod ?? "Nema još narudžbine")</td>
+                <td>@(r.NarudzbinaProizvod ?? "Nema narudžbine")</td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@r.IDRezervacije" class="btn btn-sm btn-primary">Edit</a>
                     <a asp-action="Delete" asp-route-id="@r.IDRezervacije" class="btn btn-sm btn-danger">Delete</a>
-
-                   
                 </td>
             </tr>
         }
@@ -44,4 +41,3 @@
     <a asp-action="Create" class="btn btn-success">Nova rezervacija</a>
 }
 
-<a asp-action="Index" asp-controller="Home" class="btn btn-secondary">Nazad</a>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r4b4tYpNVLo=",
+  "dgSpecHash": "k1/Q600cn+s=",
   "success": true,
-  "projectFilePath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
+  "projectFilePath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\drcrn\\.nuget\\packages\\automapper\\15.1.0\\automapper.15.1.0.nupkg.sha512",
     "C:\\Users\\drcrn\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",

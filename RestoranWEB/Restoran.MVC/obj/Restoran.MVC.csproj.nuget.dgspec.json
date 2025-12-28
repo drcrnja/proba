@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj": {}
+    "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj": {
+    "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj",
+        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj",
         "projectName": "Restoran.BLL",
-        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj",
+        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj",
         "packagesPath": "C:\\Users\\drcrn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\obj\\",
+        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
-                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj"
+              "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
+                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj"
               }
             }
           }
@@ -363,14 +363,14 @@
         }
       }
     },
-    "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
+    "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
         "projectName": "Restoran.DAL",
-        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
+        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
         "packagesPath": "C:\\Users\\drcrn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\obj\\",
+        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -714,14 +714,14 @@
         }
       }
     },
-    "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj": {
+    "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
+        "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
         "projectName": "Restoran.MVC",
-        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
+        "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\Restoran.MVC.csproj",
         "packagesPath": "C:\\Users\\drcrn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.MVC\\obj\\",
+        "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -742,11 +742,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj": {
-                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj"
+              "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj": {
+                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.BLL\\Restoran.BLL.csproj"
               },
-              "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
-                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj"
+              "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj": {
+                "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj"
               }
             }
           }

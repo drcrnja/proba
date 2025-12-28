@@ -4105,11 +4105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
+      "projectUniqueName": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
       "projectName": "Restoran.DAL",
-      "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
+      "projectPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\Restoran.DAL.csproj",
       "packagesPath": "C:\\Users\\drcrn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\RestoranWeb\\RestoranWEB\\Restoran.DAL\\obj\\",
+      "outputPath": "C:\\Users\\drcrn\\Desktop\\Github\\proba\\RestoranWEB\\Restoran.DAL\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

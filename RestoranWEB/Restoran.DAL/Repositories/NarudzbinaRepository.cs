@@ -19,6 +19,11 @@ namespace Restoran.DAL.Repositories
 
         public Task AddAsync(Narudzbina n) =>
             _ctx.Narudzbine.AddAsync(n).AsTask();
+        public Task DeleteAsync(Narudzbina entity)
+{
+    _ctx.Narudzbine.Remove(entity);
+    return Task.CompletedTask;
+}
 
         public Task<List<Narudzbina>> GetByUserAsync(string userName) =>
             _ctx.Narudzbine.Where(n => n.CreatedBy == userName).ToListAsync();
